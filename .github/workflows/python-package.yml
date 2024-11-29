@@ -22,6 +22,8 @@ jobs:
     - name: Test secrets
       run: |
         echo ${{ secrets.PG_USER }}
+      env:
+        ACTIONS_STEP_DEBUG: true
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
