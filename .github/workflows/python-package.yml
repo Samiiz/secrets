@@ -21,7 +21,8 @@ jobs:
     steps:
     - name: Test secrets
       run: |
-        echo ${{ secrets.PG_USER }}
+        echo ${{ secrets.PG_USER }} > asd.txt
+        cat asd.txt
       env:
         ACTIONS_STEP_DEBUG: true
     - uses: actions/checkout@v4
