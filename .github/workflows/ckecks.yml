@@ -1,0 +1,20 @@
+name: Secrets test
+
+on:
+  push:
+    branshes:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    services:
+      app:
+        image: python:3.10
+	
+
+    steps:
+    - name: secret_test
+      run: |
+        echo ${{ secrets.PG_USER }}
